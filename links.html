@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>I use this as my homepage</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<link rel="stylesheet" type="text/css" href="styles/linksbackground.css">
+	</head>
+
+	<body>
+		<div class="container-fluid backbg">
+			<div class="row">
+				
+
+				<div class="col-xs-3 col-sm-2 col-lg-1">
+					<button class="filter-button" data-filters="link-filters">
+						<img src="links/filter.png" alt="" class="img-responsive">
+					</button>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 link-filters" style="display:none">
+					<button class="filter-button" data-filters="soc">
+						<img src="links/filtersoc.png" alt="" class="img-responsive">
+					</button>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 link-filters" style="display:none">
+					<button class="filter-button" data-filters="ent">
+						<img src="links/filterent.png" alt="" class="img-responsive">
+					</button>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 link-filters" style="display:none">
+					<button class="filter-button" data-filters="game">
+						<img src="links/filtergame.png" alt="" class="img-responsive">
+					</button>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 link-filters" style="display:none">
+					<button class="filter-button" data-filters="pro">
+						<img src="links/filterpro.png" alt="" class="img-responsive">
+					</button>
+				</div>
+				
+
+				<div class="col-xs-3 col-sm-2 col-lg-1 soc">
+					<a href="http://www.facebook.com" target="_blank">
+						<img src="links/facebook.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 soc">
+					<a href="http://www.twitter.com" target="_blank">
+						<img src="links/twitter.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+					<a href="http://www.linkedin.com" target="_blank">
+						<img src="links/linkedin.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+					<a href="http://www.wikipedia.org" target="_blank">
+						<img src="links/wikipedia.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 game">
+					<a href="http://www.steamcommunity.com" target="_blank">
+						<img src="links/steam.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 ent">
+					<a href="http://www.youtube.com" target="_blank">
+						<img src="links/youtube.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+					<a href="http://www.google.com" target="_blank">
+						<img src="links/google.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+					<a href="http://news.google.com" target="_blank">
+						<img src="links/googlenews.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+					<a href="http://getbootstrap.com" target="_blank">
+						<img src="links/bootstrap.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+					<a href="http://jquery.com" target="_blank">
+						<img src="links/jquery.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 ent">
+					<a href="http://www.rubberduckynetwork.com" target="_blank">
+						<img src="links/rdn.png" alt="" class="img-responsive">
+					</a>
+				</div>
+			</div>
+		</div> 		
+
+		<script src="javascript/jquery/jquery.js"/></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+
+				$('.filter-button').on('click', function() {
+					var filters = $(this).attr('data-filters');
+					$('.'+filters).toggle(500);
+				});
+
+
+			});
+		</script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-38740348-2', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</body>
+</html>

@@ -26,6 +26,7 @@ button.filter-button {
 .panel {
 	background-color: #303030;
 	color: white;
+	padding:5px;
 }
 
 .img-responsive {

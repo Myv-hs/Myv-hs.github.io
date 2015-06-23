@@ -37,6 +37,11 @@ button.filter-button {
 	margin: 0px 5px;
 }
 
+.col-centered {
+	float: none;
+	margin: 0 auto;
+}
+
 #slider {
 	width: 720px;
 	height: 480px;

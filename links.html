@@ -2,6 +2,10 @@
 <html>
 
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
 		<title>I use this as my homepage</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
@@ -16,6 +20,22 @@
 				
 
 				<div class="col-xs-3 col-sm-2 col-lg-1">
+					<div class="filter-button dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="flase">
+						<a><img src="links/filter.png" alt="" class="img-responsive"></a>
+					</div>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li class="filter" data-filter="prod"><a>Productivity</a></li>
+						<li class="filter" data-filter="news"><a>News</a></li>
+						<li class="filter" data-filter="dev"><a>Developper</a></li>
+						<li class="filter" data-filter="api"><a>API Documentation</a></li>
+						<li class="filter" data-filter="soc"><a>Social</a></li>
+						<li class="filter" data-filter="ntrtain"><a>Entertainement</a></li>
+						<li class="filter" data-filter="game"><a>Gaming</a></li>
+						<li class="filter" data-filter="forum"><a>Forum</a></li>
+						<li class="filter" data-filter="hidable"><a>ALL</a></li>
+					</ul>
+				</div>
+				<!-- <div class="col-xs-3 col-sm-2 col-lg-1">
 					<button class="filter-button" data-filters="link-filters">
 						<img src="links/filter.png" alt="" class="img-responsive">
 					</button>
@@ -39,80 +59,125 @@
 					<button class="filter-button" data-filters="pro">
 						<img src="links/filterpro.png" alt="" class="img-responsive">
 					</button>
-				</div>
+				</div> -->
 				
 
-				<div class="col-xs-3 col-sm-2 col-lg-1 soc">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable soc">
 					<a href="http://www.facebook.com" target="_blank">
 						<img src="links/facebook.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 soc">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable soc">
 					<a href="http://www.twitter.com" target="_blank">
 						<img src="links/twitter.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod">
 					<a href="http://www.linkedin.com" target="_blank">
 						<img src="links/linkedin.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod">
 					<a href="http://www.wikipedia.org" target="_blank">
 						<img src="links/wikipedia.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 game">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable game">
 					<a href="http://www.steamcommunity.com" target="_blank">
 						<img src="links/steam.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 ent">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable ntrtain">
 					<a href="http://www.youtube.com" target="_blank">
 						<img src="links/youtube.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod">
+					<a href="https://duckduckgo.com/" target="_blank">
+						<img src="links/duckduckgo.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod">
 					<a href="http://www.google.com" target="_blank">
 						<img src="links/google.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod news">
 					<a href="http://news.google.com" target="_blank">
 						<img src="links/googlenews.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod dev api">
 					<a href="http://getbootstrap.com" target="_blank">
 						<img src="links/bootstrap.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 pro">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod dev api">
 					<a href="http://jquery.com" target="_blank">
 						<img src="links/jquery.png" alt="" class="img-responsive">
 					</a>
 				</div>
-				<div class="col-xs-3 col-sm-2 col-lg-1 ent">
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable ntrtain game">
 					<a href="http://www.rubberduckynetwork.com" target="_blank">
 						<img src="links/rdn.png" alt="" class="img-responsive">
 					</a>
 				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable game">
+					<a href="https://eddb.io/" target="_blank">
+						<img src="links/eddb.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable forum">
+					<a href="http://www.chevalannonce.com/" target="_blank">
+						<img src="links/ChevalAnn.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable ntrtain">
+					<a href="https://www.filmon.com/" target="_blank">
+						<img src="links/filmon.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable forum game">
+					<a href="http://inara.cz" target="_blank">
+						<img src="links/inara.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod dev game">
+					<a href="https://unity3d.com" target="_blank">
+						<img src="links/unity.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod dev api">
+					<a href="http://docs.unity3d.com/Manual/index.html" target="_blank">
+						<img src="links/unitydoc.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable game news">
+					<a href="https://www.rockpapershotgun.com/" target="_blank">
+						<img src="links/rockpapershotty.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable game">
+					<a href="https://itch.io/" target="_blank">
+						<img src="links/itchio.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-lg-1 hidable prod dev forum">
+					<a href="http://stackexchange.com/" target="_blank">
+						<img src="links/stackx.png" alt="" class="img-responsive">
+					</a>
+				</div>
+				<!-- <div class="col-xs-3 col-sm-2 col-lg-1 hidable">
+					<a href="" target="_blank">
+						<img src="links/XXXXXXX.png" alt="" class="img-responsive">
+					</a>
+				</div> -->
 			</div>
 		</div> 		
 
 		<script src="javascript/jquery/jquery.js"/></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		<script>
-			$(function() {
-
-				$('.filter-button').on('click', function() {
-					var filters = $(this).attr('data-filters');
-					$('.'+filters).toggle(500);
-				});
-
-
-			});
-		</script>
+		<script src="Javascript/main/filter.js"></script>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

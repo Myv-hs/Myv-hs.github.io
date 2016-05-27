@@ -12,7 +12,7 @@ p {
 }
 
 button.filter-button {
-	background:transparent;
+	background:red;
 	padding:0;
 	border:none;
 	margin-top: -5px;

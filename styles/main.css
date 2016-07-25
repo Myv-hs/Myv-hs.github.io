@@ -43,6 +43,10 @@ button.filter-button {
 	margin-right: auto;
 }
 
+.blk-text {
+	color:black;
+}
+
 #slider {
 	width: 720px;
 	height: 480px;

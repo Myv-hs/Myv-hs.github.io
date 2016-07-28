@@ -1,0 +1,146 @@
+<html>
+<script>
+function giveresult() {
+	var massEmpty = parseFloat(document.getElementById("a").value) || 0;
+	var massFull = parseFloat(document.getElementById("b").value) || massEmpty;
+	var massOptimal = parseFloat(document.getElementById("c").value) || 0;
+	var fsdR = document.getElementById("d").value;
+	var fsdC = parseFloat(document.getElementById("e").value) || 2;
+	var fsdFuel = parseFloat(document.getElementById("i").value) || 0;
+	var fsdMass = parseFloat(document.getElementById("f").value) || 0;
+	var fsdMassMod = parseFloat(document.getElementById("g").value)/100 || 0;
+	var massOptimalMod = parseFloat(document.getElementById("h").value)/100 || 0;
+
+	var fsdMassChange=fsdMassMod*fsdMass;
+	var massEmptyNew=massEmpty+fsdMassChange;
+	var massFullNew=massFull+fsdMassChange;
+	var massOptimalChange=massOptimalMod*massOptimal;
+	var massOptimalNew = massOptimal+massOptimalChange;
+	var fsdE = ((fsdC-2)*0.15)+2;
+	var fsdM = 0.01;
+	switch(fsdR) {
+		case "a" :
+		case "A" :
+			fsdM = 0.012;
+			break;
+		case "b" :
+		case "B" :
+		case "d" :
+		case "D" :
+			fsdM = 0.01;
+			break;
+		case "c" :
+		case "C" :
+			fsdM = 0.08;
+			break;
+		case "e" :
+		case "E" :
+			fsdM = 0.011;
+			break;
+		default :
+			fsdM = 0.01;
+			break;
+	}
+
+	var a = massOptimal/massEmpty;
+	var b = massOptimal/massFull;
+
+	var aa = massOptimalNew/massEmptyNew;
+	var ab = massOptimalNew/massFullNew;
+
+	var ba = aa/a;
+	var bb = ab/b;
+
+	var z = Math.pow(fsdFuel/fsdM, 1/fsdE);
+	var za = z*a;
+	var zb = z*b;
+	var zaa = z*aa;
+	var zab = z*ab;
+
+	var xa = (zaa-za)/za*100;
+	var xb = (zab-zb)/zb*100;
+
+	var ra = document.getElementById("currentRange");
+	ra.innerHTML= "Current Jump Range (Empty) = "+za;
+	var rb = document.getElementById("currentRangeFull");
+	rb.innerHTML= "Current Jump Range (Full) = "+zb;
+
+	var r0 = document.getElementById("newRange");
+	r0.innerHTML= "New Estimated Jump Range (Empty) = "+zaa;
+	var r1 = document.getElementById("newRangeFull");
+	r1.innerHTML= "New Estimated Jump Range (Full) = "+zab;
+
+	var r2 = document.getElementById("emptyoptimassratio");
+	r2.innerHTML= "Current optimalMass/emptyMass ratio = "+a;
+	var r3 = document.getElementById("newemptyoptimassratio");
+	r3.innerHTML= "Upgraded optimalMass/emptyMass ratio = "+aa;
+
+	var r4 = document.getElementById("fulloptimassratio");
+	r4.innerHTML= "Current optimalMass/fullMass ratio = "+b;
+	var r5 = document.getElementById("newfulloptimassratio");
+	r5.innerHTML= "Upgraded optimalMass/fullMass ratio = "+ab;
+
+	var r6 = document.getElementById("emptyratioupgrade");
+	r6.innerHTML= "empty ratio upgrade = "+ba;
+	var r7 = document.getElementById("fullratioupgrade");
+	r7.innerHTML= "full upgrade ratio = "+bb;
+
+	var r8 = document.getElementById("RangeIncrease");
+	r8.innerHTML= "empty range increase (%) = "+xa;
+	var r9 = document.getElementById("RangeIncreaseFull");
+	r9.innerHTML= "full range increase (%) = "+xb;
+
+
+
+}
+</script>
+
+<body>
+	Mass Empty : <input type="text" name="Empty" id="a" /><br>
+	Mass Full : <input type="text" name="Full" id="b" /> <span class="darktext">if blank = empty</span><br><br>
+	FSD Rating : <input type="text" name="fsdR" id="d" /><br>
+	FSD Class : <input type="text" name="fsdC" id="e" /><br>
+	FSD Max Fuel : <input type="text" name="FSDfuel" id="i" /><br>
+	FSD Optimal Mass : <input type="text" name="Optimal" id="c" /><br>
+	FSD Mass : <input type="text" name="FSDMass" id="f" /><br><br>
+	FSD Mass Mod (%) : <input type="text" name="FSDMassMod" id="g" /><br>
+	FSD Optimal Mass Mod (%) : <input type="text" name="FSDOptimalMassMod" id="h" /><br><br>
+
+	<input type="button" value="calcuate" onClick="giveresult()"><br><br>
+
+	<p id="currentRange" class="darktext">current Range (Empty)</p>
+	<p id="RangeIncrease" class="darktext">range increase (Empty)</p>
+	<p id="newRange">new Range (Empty)</p>
+	<p id="currentRangeFull" class="darktext">current Range (Full)</p>
+	<p id="RangeIncreaseFull" class="darktext">range increase (Full)</p>
+	<p id="newRangeFull">new Range (Full)</p><br>
+
+	<p id="emptyoptimassratio" class="darktext">OptimalMass/Mass ratio(Empty)
+	<p id="newemptyoptimassratio" class="darktext">New OptimalMass/Mass ratio(Empty)</p>
+	<p id="emptyratioupgrade" class="darktext"></p><br>
+	<p id="fulloptimassratio" class="darktext">OptimalMass/Mass ratio(Full)</p>
+	<p id="newfulloptimassratio" class="darktext">New OptimalMass/Mass ratio(Full)</p>
+	<p id="fullratioupgrade" class="darktext"></p><br>
+
+	<!-- <p>
+		<h3>Dafuq iz dis?</h3>
+		this is version pre-alpha of ultimate aplha stage 0.0.0.0.0.1 for the FSD range Mod calculator. ur welcum.
+
+		The 'new range' result isn't very accurate yet. Since the FSD range number E:D gives you is rounded, you lose quite a bit of accuracy. But I've tried to compensate for that.. It can only get more accurate with time, butt shouldn't be too bad when giving an idea of how much range you can gain.
+			<br>
+		the change in OptimalMass/Mass ratio is the most accurate part.
+
+	</p> -->
+
+</body>
+<style type="text/css">
+body {
+	background-color: black;
+	color:white;
+}
+
+.darktext {
+	color:#757575;
+}
+</style>
+</html>

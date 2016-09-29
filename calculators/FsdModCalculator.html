@@ -10,12 +10,15 @@ function giveresult() {
 	var fsdMass = parseFloat(document.getElementById("f").value) || 0;
 	var fsdMassMod = parseFloat(document.getElementById("g").value)/100 || 0;
 	var massOptimalMod = parseFloat(document.getElementById("h").value)/100 || 0;
+	var maxFuelMod = parseFloat(document.getElementById("j").value)/100 || 0;
 
 	var fsdMassChange=fsdMassMod*fsdMass;
 	var massEmptyNew=massEmpty+fsdMassChange;
 	var massFullNew=massFull+fsdMassChange;
 	var massOptimalChange=massOptimalMod*massOptimal;
 	var massOptimalNew = massOptimal+massOptimalChange;
+	var maxFuelChange=fsdFuel*maxFuelMod;
+	var maxFuelNew=fsdFuel+maxFuelChange;
 	var fsdE = ((fsdC-2)*0.15)+2;
 	var fsdM = 0.01;
 	switch(fsdR) {
@@ -51,7 +54,7 @@ function giveresult() {
 	var ba = aa/a;
 	var bb = ab/b;
 
-	var z = Math.pow(fsdFuel/fsdM, 1/fsdE);
+	var z = Math.pow(maxFuelNew/fsdM, 1/fsdE);
 	var za = z*a;
 	var zb = z*b;
 	var zaa = z*aa;
@@ -98,13 +101,14 @@ function giveresult() {
 <body>
 	Mass Empty : <input type="text" name="Empty" id="a" /><br>
 	Mass Full : <input type="text" name="Full" id="b" /> <span class="darktext">if blank = empty</span><br><br>
-	FSD Rating : <input type="text" name="fsdR" id="d" /><br>
-	FSD Class : <input type="text" name="fsdC" id="e" /><br>
+	FSD Rating : <input type="text" name="fsdR" id="d" /> <span class="darktext">A-E (not case sensitive)</span><br>
+	FSD Class : <input type="text" name="fsdC" id="e" /> <span class="darktext">2 and up</span><br>
 	FSD Max Fuel : <input type="text" name="FSDfuel" id="i" /><br>
 	FSD Optimal Mass : <input type="text" name="Optimal" id="c" /><br>
 	FSD Mass : <input type="text" name="FSDMass" id="f" /><br><br>
-	FSD Mass Mod (%) : <input type="text" name="FSDMassMod" id="g" /><br>
-	FSD Optimal Mass Mod (%) : <input type="text" name="FSDOptimalMassMod" id="h" /><br><br>
+	FSD Mass Mod (%) : <input type="text" name="FSDMassMod" id="g" /> <span class="darktext">+ if mod increases mass, - if it decreases</span><br>
+	FSD Optimal Mass Mod (%) : <input type="text" name="FSDOptimalMassMod" id="h" /><br>
+	FSD Max Fuel Mod (%) : <input type="text" name="FSDMaxFuelMod" id="j" /><br><br>
 
 	<input type="button" value="calcuate" onClick="giveresult()"><br><br>
 
@@ -122,21 +126,33 @@ function giveresult() {
 	<p id="newfulloptimassratio" class="darktext">New OptimalMass/Mass ratio(Full)</p>
 	<p id="fullratioupgrade" class="darktext"></p><br>
 
-	<!-- <p>
+	<p>
 		<h3>Dafuq iz dis?</h3>
-		this is version pre-alpha of ultimate aplha stage 0.0.0.0.0.1 for the FSD range Mod calculator. ur welcum.
+		<p> As the title says, this is the FSD Mod Calculator. The ultimate tool for anyone who's upgrading their FSD with an engineer. It features state of the art text input fields, the most beautiful black background ever seen on the Internet, and a standard font. Never has the Internet been so enjoyable. <br>
+		Simply enter the current stats of your craft (you can look them up in outfitting), then go to see what the Engineer has to offer, and punch their numbers in to the Mod fields. <br>
+		The calculator has been accurate for me up to now. The Max fuel mod value is newer and much less tested.
+		</p>
 
-		The 'new range' result isn't very accurate yet. Since the FSD range number E:D gives you is rounded, you lose quite a bit of accuracy. But I've tried to compensate for that.. It can only get more accurate with time, butt shouldn't be too bad when giving an idea of how much range you can gain.
-			<br>
-		the change in OptimalMass/Mass ratio is the most accurate part.
+		<p> Credits: CMDR Myv.hs, a.k.a Matthew, a.k.a Pepys, a.k.a that weirdo in the corner. <br>
+		Extra Credits to <a href="https://coriolis.io">Coriolis.io</a> and <a href="http://www.edshipyard.com">Elite Dangerous Shipyard</a>. Thx for the multiplier and exponential values, I wouldn't of found them without digging through your code. </p>
 
-	</p> -->
+		<span class="darktext"> 
+			Update 1: 
+			<ul>
+				<li>added max fuel mod field</li>
+				<li>added helpful text</li>
+			</ul>
+		</span>
+	</p>
 
 </body>
 <style type="text/css">
 body {
 	background-color: black;
 	color:white;
+}
+a {
+	color:green;
 }
 
 .darktext {

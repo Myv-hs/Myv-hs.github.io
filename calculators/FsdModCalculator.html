@@ -1,24 +1,37 @@
 <html>
 <script>
+var fsdMassNew;
+var massOptimalNew;
+var maxFuelNew;
+
+var massEmpty;
+var massFull;
+var fsdR;
+var fsdC;
+var fsdFuel;
+var massOptimal;
+var fsdMass;
+
 function giveresult() {
-	var massEmpty = parseFloat(document.getElementById("a").value) || 0;
-	var massFull = parseFloat(document.getElementById("b").value) || massEmpty;
-	var massOptimal = parseFloat(document.getElementById("c").value) || 0;
-	var fsdR = document.getElementById("d").value;
-	var fsdC = parseFloat(document.getElementById("e").value) || 2;
-	var fsdFuel = parseFloat(document.getElementById("i").value) || 0;
-	var fsdMass = parseFloat(document.getElementById("f").value) || 0;
+	massEmpty = parseFloat(document.getElementById("a").value) || 0;
+	massFull = parseFloat(document.getElementById("b").value) || massEmpty;
+	massOptimal = parseFloat(document.getElementById("c").value) || 0;
+	fsdR = document.getElementById("d").value;
+	fsdC = parseFloat(document.getElementById("e").value) || 2;
+	fsdFuel = parseFloat(document.getElementById("i").value) || 0;
+	fsdMass = parseFloat(document.getElementById("f").value) || 0;
 	var fsdMassMod = parseFloat(document.getElementById("g").value)/100 || 0;
 	var massOptimalMod = parseFloat(document.getElementById("h").value)/100 || 0;
 	var maxFuelMod = parseFloat(document.getElementById("j").value)/100 || 0;
 
 	var fsdMassChange=fsdMassMod*fsdMass;
+	fsdMassNew = fsdMass+fsdMassChange;
 	var massEmptyNew=massEmpty+fsdMassChange;
 	var massFullNew=massFull+fsdMassChange;
 	var massOptimalChange=massOptimalMod*massOptimal;
-	var massOptimalNew = massOptimal+massOptimalChange;
+	massOptimalNew = massOptimal+massOptimalChange;
 	var maxFuelChange=fsdFuel*maxFuelMod;
-	var maxFuelNew=fsdFuel+maxFuelChange;
+	maxFuelNew=fsdFuel+maxFuelChange;
 	var fsdE = ((fsdC-2)*0.15)+2;
 	var fsdM = 0.01;
 	switch(fsdR) {
@@ -73,6 +86,7 @@ function giveresult() {
 	var r1 = document.getElementById("newRangeFull");
 	r1.innerHTML= "New Estimated Jump Range (Full) = "+zab;
 
+	/*--------------- Optimal Mass to Mass Ratios -----------
 	var r2 = document.getElementById("emptyoptimassratio");
 	r2.innerHTML= "Current optimalMass/emptyMass ratio = "+a;
 	var r3 = document.getElementById("newemptyoptimassratio");
@@ -87,14 +101,21 @@ function giveresult() {
 	r6.innerHTML= "empty ratio upgrade = "+ba;
 	var r7 = document.getElementById("fullratioupgrade");
 	r7.innerHTML= "full upgrade ratio = "+bb;
-
+	------------------------------------------------------*/
+	
 	var r8 = document.getElementById("RangeIncrease");
 	r8.innerHTML= "empty range increase (%) = "+xa;
 	var r9 = document.getElementById("RangeIncreaseFull");
 	r9.innerHTML= "full range increase (%) = "+xb;
+}
 
-
-
+function applyChange () {
+	document.getElementById("i").value = maxFuelNew;
+	document.getElementById("f").value = fsdMassNew;
+	document.getElementById("c").value = massOptimalNew;
+	document.getElementById("g").value = 0;
+	document.getElementById("h").value = 0;
+	document.getElementById("j").value = 0;
 }
 </script>
 
@@ -119,23 +140,36 @@ function giveresult() {
 	<p id="RangeIncreaseFull" class="darktext">range increase (Full)</p>
 	<p id="newRangeFull">new Range (Full)</p><br>
 
+	<!-- Optimal Mass to Mass Ratio
 	<p id="emptyoptimassratio" class="darktext">OptimalMass/Mass ratio(Empty)
 	<p id="newemptyoptimassratio" class="darktext">New OptimalMass/Mass ratio(Empty)</p>
 	<p id="emptyratioupgrade" class="darktext"></p><br>
 	<p id="fulloptimassratio" class="darktext">OptimalMass/Mass ratio(Full)</p>
 	<p id="newfulloptimassratio" class="darktext">New OptimalMass/Mass ratio(Full)</p>
 	<p id="fullratioupgrade" class="darktext"></p><br>
+	-->
+
+	<input type="button" value="Apply FSD Mod" onClick="applyChange()"><br><br>
 
 	<p>
-		<h3>Dafuq iz dis?</h3>
+		<!-- <h3>Dafuq iz dis?</h3> -->
+		<h3>About</h3>
 		<p> As the title says, this is the FSD Mod Calculator. The ultimate tool for anyone who's upgrading their FSD with an engineer. It features state of the art text input fields, the most beautiful black background ever seen on the Internet, and a standard font. Never has the Internet been so enjoyable. <br>
-		Simply enter the current stats of your craft (you can look them up in outfitting), then go to see what the Engineer has to offer, and punch their numbers in to the Mod fields. <br>
-		The calculator has been accurate for me up to now. The Max fuel mod value is newer and much less tested.
+		Simply enter the current stats of your craft (you can look them up in outfitting), then go to see what the Engineer has to offer, and punch their numbers in to the Mod fields. <br><br>
+		I've found some inaccuracy around the 0.01 point, this might be due to Frontier rounding up values as they go along, and as you can see I don't round any part up... yet. I will do some testing and try to remove then inaccuracy.
+		However, when compairing your currents stats to the stats of a possible mod, unless the change of range is of 0.01Ly, the calculator will tell you which is better even if it doesn't give the most accurate range.
 		</p>
 
-		<p> Credits: CMDR Myv.hs, a.k.a Matthew, a.k.a Pepys, a.k.a that weirdo in the corner. <br>
+		<p> Credits: CMDR Myv.hs, a.k.a Pepys<br>
 		Extra Credits to <a href="https://coriolis.io">Coriolis.io</a> and <a href="http://www.edshipyard.com">Elite Dangerous Shipyard</a>. Thx for the multiplier and exponential values, I wouldn't of found them without digging through your code. </p>
 
+		<span class="darktext">
+			Update 2:
+			<ul>
+				<li>added Apply Changes function</li>
+				<li>commented out 'Optimal Mass to Mass ratio' (DL source and remove comment tags to return functionality)</li>
+			</ul>
+		</span>
 		<span class="darktext"> 
 			Update 1: 
 			<ul>

@@ -113,49 +113,31 @@ function applyChange () {
 	document.getElementById("iFsdF").value = maxFuelNew;
 	document.getElementById("iFsdM").value = fsdMassNew;
 	document.getElementById("iOptiM").value = massOptimalNew;
-	document.getElementById("mFsdM").value = 0;
-	document.getElementById("mOptiM").value = 0;
-	document.getElementById("mFsdF").value = 0;
+	document.getElementById("mFsdM").value = "";
+	document.getElementById("mOptiM").value = "";
+	document.getElementById("mFsdF").value = "";
 }
 
 function storeStats () {
 	giveresult();
 	var expireinDays = 500;
-	createCookie("iEmptyM", massEmpty, expireinDays);
-	createCookie("iFullM", massFull, expireinDays);
-	createCookie("iOptiM", massOptimal, expireinDays);
-	createCookie("iR", fsdR, expireinDays);
-	createCookie("iC", fsdC, expireinDays);
-	createCookie("iFsdF", fsdFuel, expireinDays);
-	createCookie("iFsdM", fsdMass, expireinDays);
-	/* document.cookie = "iEmptyM="+massEmpty+";"+"iFullM="+massFull+";"+"iOptiM="+massOptimal+";"+"iR="+fsdR+";"+"iC="+fsdC+";"+"iFsdF="+fsdFuel+";"+"iFsdM="+massEmpty+";"+";expires=Tue, 19 Jan 2038 03:14:07 UTC;path=/";
-	console.log(document.cookie);
-	*/
+	createCookie("c_iEmptyM", massEmpty, expireinDays);
+	createCookie("c_iFullM", massFull, expireinDays);
+	createCookie("c_iOptiM", massOptimal, expireinDays);
+	createCookie("c_iR, fsdR", expireinDays);
+	createCookie("c_iC, fsdC", expireinDays);
+	createCookie("c_iFsdF", fsdFuel, expireinDays);
+	createCookie("c_iFsdM", fsdMass, expireinDays);
 }
 
 function loadStats () {
-	document.getElementById("iEmptyM").value = loadCookieValue(iEmptyM);
-	document.getElementById("iFullM").value = loadCookieValue(iFullM);
-	document.getElementById("iOptiM").value = loadCookieValue(iOptiM);
-	document.getElementById("iR").value = loadCookieValue(iR);
-	document.getElementById("iC").value = loadCookieValue(iC);
-	document.getElementById("iFsdF").value = loadCookieValue(iFsdF);
-	document.getElementById("iFsdM").value = loadCookieValue(iFsdM);
-	/*
-	var cookieArray = document.cookie.split(';');
-	for (var i=0; i<cookieArray.Length-2; i++) {
-		var cookieArrayInfo = cookieArray[i];
-		var cookieArrayInfoArray = cookieArrayInfo.split('=');
-		var cookieArrayInfoTitle = String(cookieArrayInfoArray[0]);
-		var cookieArrayInfoValue;
-		if (i = 3) {
-			cookieArrayInfoValue = String(cookieArrayInfoArray[1]);
-		} else {
-			cookieArrayInfoValue = parseFloat(cookieArrayInfoArray[1]);
-		}
-		document.getElementById(cookieArrayInfoTitle).value = cookieArrayInfoValue;
-	}
-	*/
+	document.getElementById("iEmptyM").value = loadCookieValue("c_iEmptyM");
+	document.getElementById("iFullM").value = loadCookieValue("c_iFullM");
+	document.getElementById("iOptiM").value = loadCookieValue("c_iOptiM");
+	document.getElementById("iR").value = loadCookieValue("c_iR");
+	document.getElementById("iC").value = loadCookieValue("c_iC");
+	document.getElementById("iFsdF").value = loadCookieValue("c_iFsdF");
+	document.getElementById("iFsdM").value = loadCookieValue("c_iFsdM");
 }
 
 function createCookie (c_name, c_value, exdays) {

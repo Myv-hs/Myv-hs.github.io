@@ -120,6 +120,7 @@ function applyChange () {
 
 function storeStats () {
 	document.cookie = "iEmptyM="+massEmpty+";"+"iFullM="+massFull+";"+"iOptiM="+massOptimal+";"+"iR="+fsdR+";"+"iC="+fsdC+";"+"iFsdF="+fsdFuel+";"+"iFsdM="+massEmpty+";"+";expires=Tue, 19 Jan 2038 03:14:07 UTC;path=/";
+	console.log(document.cookie);
 }
 
 function loadStats () {

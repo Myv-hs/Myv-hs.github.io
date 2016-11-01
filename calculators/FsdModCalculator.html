@@ -117,24 +117,31 @@ function applyChange () {
 	document.getElementById("mOptiM").value = 0;
 	document.getElementById("mFsdF").value = 0;
 }
-/*
+
 function storeStats () {
-	document.cookie = "iEmptyM="+massEmpty+";"+"iFullM="+massFull+";"+"iOptiM="+massOptimal+";"+"iR="+fsdR+";"+"iC="+fsdC+";"+"iFsdF="+fsdFuel+";"+"iFsdM="+massEmpty+";"+ ";path=/;expires=Tue, 19 Jan 2038 03:14:07 UTC";
+	document.cookie = "iEmptyM="+massEmpty+";"+"iFullM="+massFull+";"+"iOptiM="+massOptimal+";"+"iR="+fsdR+";"+"iC="+fsdC+";"+"iFsdF="+fsdFuel+";"+"iFsdM="+massEmpty+";"+";path=/;expires=Tue, 19 Jan 2038 03:14:07 UTC";
 }
+
 function loadStats () {
 	var cookieArray = document.cookie.split(';');
-	for (var i=0 i<cookieArray.Length-2; i++) {
+	for (var i=0; i<cookieArray.Length-2; i++) {
 		var cookieArrayInfo = cookieArray[i];
 		var cookieArrayInfoArray = cookieArrayInfo.split('=');
 		var cookieArrayInfoTitle = String(cookieArrayInfoArray[0]);
-		var cookieArrayInfoValue = parseFloat(cookieArrayInfoArray[1]);
+		var cookieArrayInfoValue;
+		if (i = 3) {
+			cookieArrayInfoValue = String(cookieArrayInfoArray[1]);
+		} else {
+			cookieArrayInfoValue = parseFloat(cookieArrayInfoArray[1]);
+		}
 		document.getElementById(cookieArrayInfoTitle).value = cookieArrayInfoValue;
 	}
 }
+
 function clearStats () {
 	//todo
 }
-*/
+
 </script>
 
 <body>

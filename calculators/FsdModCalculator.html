@@ -156,7 +156,7 @@ function loadCookieValue (cookieID) {
             c = c.substring(1);
         }
         if (c.indexOf(cookieValueTitle) == 0) {
-            return c.substring(name.length,c.length);
+            return c.substring(cookieValueTitle.length,c.length);
         }
     }
     return "";

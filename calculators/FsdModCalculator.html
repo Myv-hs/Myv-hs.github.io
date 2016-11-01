@@ -117,8 +117,9 @@ function applyChange () {
 	document.getElementById("mOptiM").value = 0;
 	document.getElementById("mFsdF").value = 0;
 }
-
+/*
 function storeStats () {
+	giveresult();
 	document.cookie = "iEmptyM="+massEmpty+";"+"iFullM="+massFull+";"+"iOptiM="+massOptimal+";"+"iR="+fsdR+";"+"iC="+fsdC+";"+"iFsdF="+fsdFuel+";"+"iFsdM="+massEmpty+";"+";expires=Tue, 19 Jan 2038 03:14:07 UTC;path=/";
 	console.log(document.cookie);
 }
@@ -138,7 +139,7 @@ function loadStats () {
 		document.getElementById(cookieArrayInfoTitle).value = cookieArrayInfoValue;
 	}
 }
-
+*/
 function clearStats () {
 	//todo
 }
@@ -175,7 +176,7 @@ function clearStats () {
 	<p id="fullratioupgrade" class="darktext"></p><br>
 	-->
 
-	<input type="button" value="Apply FSD Mod" onClick="applyChange()"> <input type="button" value="Save Ship Config" onClick="storeStats()"> <input type="button" value="Load Ship Config" onClick="loadStats()"><br><br>
+	<input type="button" value="Apply FSD Mod" onClick="applyChange()"> <!--<input type="button" value="Save Ship Config" onClick="storeStats()"> <input type="button" value="Load Ship Config" onClick="loadStats()">--><br><br>
 
 	<p>
 		<!-- <h3>Dafuq iz dis?</h3> -->

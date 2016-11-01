@@ -125,7 +125,7 @@ function loadStats () {
 	var cookieArray = document.cookie.split(';');
 	for (var i=0 i<cookieArray.Length-2; i++) {
 		var cookieArrayInfo = cookieArray[i];
-		var cookieArrayInfoArray = cookieArrayInfo.split('=')
+		var cookieArrayInfoArray = cookieArrayInfo.split('=');
 		var cookieArrayInfoTitle = String(cookieArrayInfoArray[0]);
 		var cookieArrayInfoValue = parseFloat(cookieArrayInfoArray[1]);
 		document.getElementById(cookieArrayInfoTitle).value = cookieArrayInfoValue;

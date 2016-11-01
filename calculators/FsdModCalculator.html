@@ -3,6 +3,8 @@
 var fsdMassNew;
 var massOptimalNew;
 var maxFuelNew;
+var massEmptyNew;
+var massFullNew;
 
 var massEmpty;
 var massFull;
@@ -26,8 +28,8 @@ function giveresult() {
 
 	var fsdMassChange=fsdMassMod*fsdMass;
 	fsdMassNew = fsdMass+fsdMassChange;
-	var massEmptyNew=massEmpty+fsdMassChange;
-	var massFullNew=massFull+fsdMassChange;
+	massEmptyNew=massEmpty+fsdMassChange;
+	massFullNew=massFull+fsdMassChange;
 	var massOptimalChange=massOptimalMod*massOptimal;
 	massOptimalNew = massOptimal+massOptimalChange;
 	var maxFuelChange=fsdFuel*maxFuelMod;
@@ -113,6 +115,8 @@ function applyChange () {
 	document.getElementById("iFsdF").value = maxFuelNew;
 	document.getElementById("iFsdM").value = fsdMassNew;
 	document.getElementById("iOptiM").value = massOptimalNew;
+	document.getElementById("iEmptyM").value =massEmptyNew;
+	document.getElementById("iFullM").value =massFullNew;
 	document.getElementById("mFsdM").value = "";
 	document.getElementById("mOptiM").value = "";
 	document.getElementById("mFsdF").value = "";
@@ -213,14 +217,20 @@ function clearStats () {
 		<p> Credits: CMDR Myv.hs, a.k.a Pepys<br>
 		Extra Credits to <a href="https://coriolis.io">Coriolis.io</a> and <a href="http://www.edshipyard.com">Elite Dangerous Shipyard</a>. Thx for the multiplier and exponential values, I wouldn't of found them without digging through your code. </p>
 
-		<spam class="darktext">
+		<span class="darktext">
+			update 4:
+			<ul>
+				<li>fixed "apply changes" to adjust empty and full mass</li>
+			</ul>
+		</span>
+		<span class="darktext">
 			update 3:
 			<ul>
 				<li>added Ship stats saving</li>
 				<li>updated CSS</li>
 				<li>updated HTML field IDs to be more explanatory</li>
 			</ul>
-		</spam>
+		</span>
 		<span class="darktext">
 			Update 2:
 			<ul>

@@ -15,6 +15,10 @@ var massOptimal;
 var fsdMass;
 
 function giveresult() {
+	var decimal_acc = 4;
+	var decimal_acc_med = 2;
+	var decimal_acc_low = 1;
+
 	massEmpty = parseFloat(document.getElementById("iEmptyM").value) || 0;
 	massFull = parseFloat(document.getElementById("iFullM").value) || massEmpty;
 	massOptimal = parseFloat(document.getElementById("iOptiM").value) || 0;
@@ -27,13 +31,13 @@ function giveresult() {
 	var maxFuelMod = parseFloat(document.getElementById("mFsdF").value)/100 || 0;
 
 	var fsdMassChange=fsdMassMod*fsdMass;
-	fsdMassNew = fsdMass+fsdMassChange;
-	massEmptyNew=massEmpty+fsdMassChange;
-	massFullNew=massFull+fsdMassChange;
+	fsdMassNew = roundNumber(fsdMass+fsdMassChange, decimal_acc_med);
+	massEmptyNew= roundNumber(massEmpty+fsdMassChange, decimal_acc_low);
+	massFullNew= roundNumber(massFull+fsdMassChange, decimal_acc_low);
 	var massOptimalChange=massOptimalMod*massOptimal;
-	massOptimalNew = massOptimal+massOptimalChange;
+	massOptimalNew = roundNumber(massOptimal+massOptimalChange, decimal_acc_low);
 	var maxFuelChange=fsdFuel*maxFuelMod;
-	maxFuelNew=fsdFuel+maxFuelChange;
+	maxFuelNew= roundNumber(fsdFuel+maxFuelChange, decimal_acc_med);
 	var fsdE = ((fsdC-2)*0.15)+2;
 	var fsdM = 0.01;
 	switch(fsdR) {
@@ -60,23 +64,25 @@ function giveresult() {
 			break;
 	}
 
-	var a = massOptimal/massEmpty;
-	var b = massOptimal/massFull;
 
-	var aa = massOptimalNew/massEmptyNew;
-	var ab = massOptimalNew/massFullNew;
+	var a = roundNumber(massOptimal/massEmpty, decimal_acc);
+	var b = roundNumber(massOptimal/massFull, decimal_acc);
+
+	var aa = roundNumber(massOptimalNew/massEmptyNew, decimal_acc);
+	var ab = roundNumber(massOptimalNew/massFullNew, decimal_acc);
 
 	var ba = aa/a;
 	var bb = ab/b;
 
-	var z = Math.pow(maxFuelNew/fsdM, 1/fsdE);
-	var za = z*a;
-	var zb = z*b;
-	var zaa = z*aa;
-	var zab = z*ab;
+	var z_old = roundNumber(Math.pow(fsdFuel/fsdM, 1/fsdE), decimal_acc);
+	var z = roundNumber(Math.pow(maxFuelNew/fsdM, 1/fsdE), decimal_acc);
+	var za = roundNumber(z_old*a, decimal_acc_med);
+	var zb = roundNumber(z_old*b, decimal_acc_med);
+	var zaa = roundNumber(z*aa, decimal_acc_med);
+	var zab = roundNumber(z*ab, decimal_acc_med);
 
-	var xa = (zaa-za)/za*100;
-	var xb = (zab-zb)/zb*100;
+	var xa = roundNumber((zaa-za)/za*100, decimal_acc);
+	var xb = roundNumber((zab-zb)/zb*100, decimal_acc);
 
 	var ra = document.getElementById("currentRange");
 	ra.innerHTML= "Current Jump Range (Empty) = "+za;
@@ -109,6 +115,12 @@ function giveresult() {
 	r8.innerHTML= "empty range increase (%) = "+xa;
 	var r9 = document.getElementById("RangeIncreaseFull");
 	r9.innerHTML= "full range increase (%) = "+xb;
+}
+
+function roundNumber (to_round, decimals) {
+	var roundfactor = Math.pow(10, decimals);
+	var rounded = Math.round(to_round*roundfactor)/roundfactor;
+	return rounded;
 }
 
 function applyChange () {
@@ -209,14 +221,23 @@ function clearStats () {
 		<h3>FSD Mod Calculation and Comparison Tool</h3>
 		<p> As the title says, this is the FSD Mod Calculator. The ultimate tool for anyone who's upgrading their FSD with an engineer. It features state of the art text input fields, the most beautiful black background ever seen on the Internet, the option to store values, and a standard font. Never has the Internet been so enjoyable. <br>
 		Simply enter the current stats of your craft (you can look them up in outfitting), then go to see what the Engineer has to offer, and punch their numbers in to the Mod fields. <br><br>
-		I've found some inaccuracy around the 0.01 point, this might be due to Frontier rounding up values as they go along, and as you can see I don't round any part up... yet. I will do some testing and try to remove then inaccuracy.
-		However, when compairing your currents stats to the stats of a possible mod, unless the change of range extremly small, the calculator will tell you which is better even if it doesn't give the most accurate range.
+		With update 5, I've tried to solve the 0.00 accuracy by rounding some numbers to 1, 2 or 4 decimal points before calculation. I tested with only 1 and 2 decimal accuracy, but the results were off, so nearly all background calculations have 4 decimals of accuracy, unless the ingame numbers are less accurate.
+		While I've had 100% success calculating the current range of my ships (6 ships: sidwinder to Python), I haven't yet tested mod results. I'll probably test with my sidewinder (since it needs an upgrade), and the next med/large ship I get.. but I have found that 1% changes of fsd mass on the sidewinder seem to have no effect on the range.
+		Anyway, I'll be testing this as much as I can, and I'll start a thread on Fdev's forums in the event people want to help test the accuracy.
+
 		Also, in an upcoming update, I'll try to add a function to estimate the number of rolls needed to reach a target range, as suggested by Dr. Kaii.
 		</p>
 
 		<p> Credits: CMDR Myv.hs, a.k.a Pepys<br>
 		Extra Credits to <a href="https://coriolis.io">Coriolis.io</a> and <a href="http://www.edshipyard.com">Elite Dangerous Shipyard</a>. Thx for the multiplier and exponential values, I wouldn't of found them without digging through your code. </p>
 
+		<span class="darktext">
+			update 5:
+			<ul>
+				<li>used rounding in an attempt to improve calculation accuracy when compared to in game results</li>
+				<li>fixed moded fuel use being used for current range calculations</li>
+			</ul>
+		</span>
 		<span class="darktext">
 			update 4:
 			<ul>

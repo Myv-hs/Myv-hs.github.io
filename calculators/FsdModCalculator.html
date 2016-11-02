@@ -15,7 +15,7 @@ var massOptimal;
 var fsdMass;
 
 function giveresult() {
-	var decimal_acc = 4;
+	var decimal_acc = 8;
 	var decimal_acc_med = 2;
 	var decimal_acc_low = 1;
 
@@ -26,18 +26,40 @@ function giveresult() {
 	fsdC = parseFloat(document.getElementById("iC").value) || 2;
 	fsdFuel = parseFloat(document.getElementById("iFsdF").value) || 0;
 	fsdMass = parseFloat(document.getElementById("iFsdM").value) || 0;
-	var fsdMassMod = parseFloat(document.getElementById("mFsdM").value)/100 || 0;
-	var massOptimalMod = parseFloat(document.getElementById("mOptiM").value)/100 || 0;
-	var maxFuelMod = parseFloat(document.getElementById("mFsdF").value)/100 || 0;
 
-	var fsdMassChange=fsdMassMod*fsdMass;
-	fsdMassNew = roundNumber(fsdMass+fsdMassChange, decimal_acc_med);
+	var fsdMassMod;
+	var massOptimalMod;
+	var maxFuelMod;
+	var fsdMassChange;
+	var massOptimalChange;
+	var maxFuelChange;
+	if (document.getElementById("typePercentage").checked == true) {
+		fsdMassMod = parseFloat(document.getElementById("mFsdM").value)/100 || 0;
+		massOptimalMod = parseFloat(document.getElementById("mOptiM").value)/100 || 0;
+		maxFuelMod = parseFloat(document.getElementById("mFsdF").value)/100 || 0;
+		
+		fsdMassChange=fsdMassMod*fsdMass;
+		massOptimalChange=massOptimalMod*massOptimal;
+		maxFuelChange=fsdFuel*maxFuelMod;
+
+		fsdMassNew = roundNumber(fsdMass+fsdMassChange, decimal_acc_med);
+		massOptimalNew = roundNumber(massOptimal+massOptimalChange, decimal_acc_med);
+		maxFuelNew= roundNumber(fsdFuel+maxFuelChange, decimal_acc_med);
+	} else {
+		fsdMassNew = parseFloat(document.getElementById("mFsdM").value) || fsdMass;
+		massOptimalNew = parseFloat(document.getElementById("mOptiM").value) || massOptimal;
+		maxFuelNew= parseFloat(document.getElementById("mFsdF").value) || fsdFuel;
+
+		massOptimalNew = roundNumber(massOptimalNew, decimal_acc_low);
+
+		fsdMassChange=fsdMassNew-fsdMass;
+		massOptimalChange=massOptimalNew-massOptimal;
+		maxFuelChange= maxFuelNew-fsdFuel;
+	}
+
 	massEmptyNew= roundNumber(massEmpty+fsdMassChange, decimal_acc_low);
 	massFullNew= roundNumber(massFull+fsdMassChange, decimal_acc_low);
-	var massOptimalChange=massOptimalMod*massOptimal;
-	massOptimalNew = roundNumber(massOptimal+massOptimalChange, decimal_acc_low);
-	var maxFuelChange=fsdFuel*maxFuelMod;
-	maxFuelNew= roundNumber(fsdFuel+maxFuelChange, decimal_acc_med);
+
 	var fsdE = ((fsdC-2)*0.15)+2;
 	var fsdM = 0.01;
 	switch(fsdR) {
@@ -63,7 +85,6 @@ function giveresult() {
 			fsdM = 0.01;
 			break;
 	}
-
 
 	var a = roundNumber(massOptimal/massEmpty, decimal_acc);
 	var b = roundNumber(massOptimal/massFull, decimal_acc);
@@ -192,9 +213,10 @@ function clearStats () {
 	FSD Max Fuel : <input type="text" name="FSDfuel" id="iFsdF" /><br>
 	FSD Optimal Mass : <input type="text" name="Optimal" id="iOptiM" /><br>
 	FSD Mass : <input type="text" name="FSDMass" id="iFsdM" /><br><br>
-	FSD Mass Mod (%) : <input type="text" name="FSDMassMod" id="mFsdM" /> <span class="darktext">+ if mod increases mass, - if it decreases</span><br>
-	FSD Optimal Mass Mod (%) : <input type="text" name="FSDOptimalMassMod" id="mOptiM" /><br>
-	FSD Max Fuel Mod (%) : <input type="text" name="FSDMaxFuelMod" id="mFsdF" /><br><br>
+	FSD Mass Mod : <input type="text" name="FSDMassMod" id="mFsdM" /> <span class="darktext">+ if mod increases mass, - if it decreases if input mode is percentage</span><br>
+	FSD Optimal Mass Mod : <input type="text" name="FSDOptimalMassMod" id="mOptiM" /><br>
+	FSD Max Fuel Mod : <input type="text" name="FSDMaxFuelMod" id="mFsdF" /><br>
+	<span class="darktext"> Mod input mode : percentage <input type="checkbox" name="valueType" id="typePercentage" checked/> <br> else new stat value // Note: percentage is less accurate but generally is faster to type</span> <br> <br>
 
 	<input type="button" value="calcuate" onClick="giveresult()"><br><br>
 
@@ -221,16 +243,22 @@ function clearStats () {
 		<h3>FSD Mod Calculation and Comparison Tool</h3>
 		<p> As the title says, this is the FSD Mod Calculator. The ultimate tool for anyone who's upgrading their FSD with an engineer. It features state of the art text input fields, the most beautiful black background ever seen on the Internet, the option to store values, and a standard font. Never has the Internet been so enjoyable. <br>
 		Simply enter the current stats of your craft (you can look them up in outfitting), then go to see what the Engineer has to offer, and punch their numbers in to the Mod fields. <br><br>
-		With update 5, I've tried to solve the 0.00 accuracy by rounding some numbers to 1, 2 or 4 decimal points before calculation. I tested with only 1 and 2 decimal accuracy, but the results were off, so nearly all background calculations have 4 decimals of accuracy, unless the ingame numbers are less accurate.
-		While I've had 100% success calculating the current range of my ships (6 ships: sidwinder to Python), I haven't yet tested mod results. I'll probably test with my sidewinder (since it needs an upgrade), and the next med/large ship I get.. but I have found that 1% changes of fsd mass on the sidewinder seem to have no effect on the range.
-		Anyway, I'll be testing this as much as I can, and I'll start a thread on Fdev's forums in the event people want to help test the accuracy.
+		With update 5 and 6, I've tried to solve the 0.00 accuracy by rounding some numbers to 1, 2 or 8 decimal points before calculation. I tested with only 1 and 2 decimal accuracy, but the results were off, so nearly all background calculations have 8 decimals of accuracy, unless the ingame numbers are less accurate. <br>
+		When using percentages, calculations were off by a bit, and the errors accumulated over subsquent 'application and roll' loops. To resolve this, I included the option to enter the new values directly: this is a requires more typing, and typing less conveiant numbers, but is much more accurate and doesn't let errors accumulate over subsequent 'mod application and roll' loops. More importantly, it has revealed to me that the values displayed aren't the values used in calculations since I managed to get two identical sets of stats ingame, with different ranges, but that was a 1% change on a sidewinder which had an effect of an 0.01Ly error. <br>
 
-		Also, in an upcoming update, I'll try to add a function to estimate the number of rolls needed to reach a target range, as suggested by Dr. Kaii.
+		In an future update, I'll try to resolve this error as best I can. I'll also try to add a function to estimate the number of rolls needed to reach a target range, as suggested by Dr. Kaii.
 		</p>
 
 		<p> Credits: CMDR Myv.hs, a.k.a Pepys<br>
 		Extra Credits to <a href="https://coriolis.io">Coriolis.io</a> and <a href="http://www.edshipyard.com">Elite Dangerous Shipyard</a>. Thx for the multiplier and exponential values, I wouldn't of found them without digging through your code. </p>
 
+		<span class="darktext">
+			update 6:
+			<ul>
+				<li>added mod value input type selection</li>
+				<li>increase float calculation accuracy</li>
+			</ul>
+		</span>
 		<span class="darktext">
 			update 5:
 			<ul>

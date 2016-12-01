@@ -1,0 +1,66 @@
+:root {
+	--darkcolor: #1e0005;
+	--medcolor:  #700014;
+	--lightcolor: #d8cbcb;
+}
+
+body {
+	color:white;
+	background-color: var(--medcolor);
+}
+.content {
+	background-color: var(--darkcolor);
+	color:white;
+}
+
+.topbar {
+	display: inline-block;
+	color: black;
+	background-color: var(--lightcolor);
+	height: 200px;
+	width: 100%;
+	padding: 0px 20px;
+	margin-bottom: 20px;
+}
+.topbar h1 {
+	margin-top: 100px;
+	color: var(--darkcolor);
+}
+
+.topbar h1 small {
+	color: var(--medcolor);
+}
+
+.topbar p {
+	position: absolute;
+	z-index: 1;
+	right:2%;
+	margin-top: 90px;
+	text-align: right;
+}
+
+.topbar img {
+	position: absolute;
+	z-index: 0;
+	height: 200px;
+	right:0;
+	opacity: 0.25;
+}
+
+.navbar-custom {
+	background-color: var(--lightcolor);
+}
+
+.btn-custom {
+	text-align: center;
+	color: white;
+	border:1px solid;
+	border-color: var(--darkcolor);
+	border-radius:0px;
+	background-color: var(--medcolor);
+}
+.btn-custom:focus, .btn-custom:hover {
+	color: var(--lightcolor);
+	background-color: var(--darkcolor);
+	border-color: var(--medcolor);
+}

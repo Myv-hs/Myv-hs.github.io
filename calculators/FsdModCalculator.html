@@ -27,7 +27,7 @@ function giveresult() {
 	massFull = parseFloat(document.getElementById("iFullM").value) || massEmpty;
 	massFuel = parseFloat(document.getElementById("iFuelM").value) || 0;
 	massOptimal = parseFloat(document.getElementById("iOptiM").value) || 0;
-	fsdR = document.getElementById("iR").value;
+	fsdR = document.getElementById("iR").value || "A";
 	fsdC = parseFloat(document.getElementById("iC").value) || 2;
 	fsdFuel = parseFloat(document.getElementById("iFsdF").value) || 0;
 	fsdMass = parseFloat(document.getElementById("iFsdM").value) || 0;

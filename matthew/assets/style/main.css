@@ -1,15 +1,16 @@
 :root {
-	--darkcolor: #1e0005;
-	--medcolor:  #700014;
-	--lightcolor: #d8cbcb;
+	--darkcolor: #000000;
+	--mdarkcolor: #101010;
+	--medcolor:  #505050;
+	--lightcolor: #f0f0f0;
 }
 
 body {
 	color:white;
-	background-color: var(--medcolor);
+	background-color: var(--darkcolor);
 }
 .content {
-	background-color: var(--darkcolor);
+	background-color: var(--mdarkcolor);
 	color:white;
 }
 
@@ -45,7 +46,7 @@ body {
 	position: absolute;
 	z-index: 0;
 	height: 200px;
-	left:250px;
+	left:200px;
 	opacity: 0.34;
 }
 
@@ -59,8 +60,10 @@ body {
 	border:1px solid;
 	border-color: var(--darkcolor);
 	border-radius:0px;
-	background-color: var(--medcolor);
+	background: var(--medcolor);
+	background: linear-gradient(var(--medcolor)50%,var(--darkcolor)200%);
 }
+
 .btn-custom:focus, .btn-custom:hover {
 	color: var(--lightcolor);
 	background-color: var(--darkcolor);

@@ -18,6 +18,9 @@ body {
 	object-position: 50% 40%;
 }
 
+.upmargin {
+	margin-top: 5%;
+}
 
 .mainwidth {
 	width: 80%;
@@ -57,10 +60,20 @@ body {
 	color: #66ff66;
 }
 
-.videothumbnail {
+.thumbnail {
 	width:100%;
 }
 
-.videothumbnail:hover {
+.thumbnail:hover {
 	cursor: pointer;
+}
+
+.limitedheight {
+	max-height: 720px;
+}
+
+.galleryimg {
+	width:100%;
+	height: 30%;
+	object-fit:cover;
 }

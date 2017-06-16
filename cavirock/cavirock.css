@@ -1,0 +1,66 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: helvetica;
+}
+
+.centered {
+	text-align: center;
+}
+.righted {
+	text-align: right;
+}
+
+.headerimg {
+	width: 100%;
+	height: 25%;
+	object-fit:cover;
+	object-position: 50% 40%;
+}
+
+
+.mainwidth {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.smallwidth {
+	width: 70%;
+	margin-left:15%;
+	margin-right: 15%;
+}
+.smallerwidth {
+	width: 50%;
+	margin-right:25%;
+	margin-left:25%;
+}
+
+.row {
+	display: flex;
+}
+.col {
+	flex:1;
+}
+
+.minusmargin {
+	margin-left: -33px;
+}
+
+.setlist {
+	list-style: none;
+	line-height: 150%;
+}
+
+.datetext {
+	font-weight: bold;
+	color: #66ff66;
+}
+
+.videothumbnail {
+	width:100%;
+}
+
+.videothumbnail:hover {
+	cursor: pointer;
+}

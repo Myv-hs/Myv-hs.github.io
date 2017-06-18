@@ -60,6 +60,11 @@ body {
 	color: #66ff66;
 }
 
+.pastdatetext {
+	font-weight: bold;
+	color:#ff3333;
+}
+
 .thumbnail {
 	width:100%;
 }

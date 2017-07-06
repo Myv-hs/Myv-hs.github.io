@@ -1,0 +1,86 @@
+:root {
+	--games: #00ff00;
+	--music:  #0000ff;
+	--video: #d8cbcb;
+}
+
+body {
+	background-color: #262626;
+}
+
+h3 {
+	padding: 0px;
+	margin: 5px 0px 0px 5px;
+}
+
+p {
+	padding: 5px;
+}
+
+button.filter-button {
+	background:red;
+	padding:0;
+	border:none;
+	margin-top: -5px;
+}
+
+.row {
+	display: flex;
+}
+
+.col {
+	flex:1;
+}
+
+.blackbg {
+	background-color: black;
+	padding: 10px;
+}
+
+.panel {
+	background-color: #303030;
+	color: white;
+	padding:5px;
+}
+
+.img-responsive {
+	margin: 20px 0px;
+}
+
+.btn-group-vertical {
+	margin: 0px 5px;
+}
+
+.Myv-centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.blk-text {
+	color:black;
+}
+
+#slider {
+	width: 720px;
+	height: 480px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+#slider .slides {
+	display: block;
+	width: 5040px;
+	height: 480px;
+	margin: 0;
+	padding: 0;
+}
+
+#slider .slide {
+	float: left;
+	list-style-type: none;
+	width: 720px;
+	height: 480px;
+}

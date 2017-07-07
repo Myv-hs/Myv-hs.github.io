@@ -1,0 +1,45 @@
+.tile {
+	margin:0;
+	padding:0;
+}
+
+.tile-img {
+	height:100%;
+	width:100%;
+	object-fit:cover;
+}
+
+.tile-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0.5;
+	transition: .5s ease;
+	background-color: black;
+}
+.tile-overlay-content {
+	position: absolute;
+	/*width: 10%;
+	height: 10%;*/
+	padding: 5%;
+	right:0;
+	top:0;
+	opacity: 0;
+	transition: 2s ease;
+	/*transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);*/
+}
+
+/**********************
+	ANIMATION TREE
+**********************/
+.tile:hover .tile-overlay {
+	opacity: 0;
+}
+.tile:hover .tile-overlay-content {
+	opacity: 1;
+}

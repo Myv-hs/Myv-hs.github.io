@@ -1,0 +1,38 @@
+.button {
+	text-align: center;	
+	padding-top:10px;
+	padding-bottom: 10px;
+	opacity: 0.8;
+	margin-bottom: 10%;
+}
+
+.button a {
+	color: white;
+	display: block;
+	height: 100%;
+	text-decoration:  none;
+}
+
+.button:hover {
+	opacity: 1;
+}
+
+.btn-green {
+	background-color: rgba(127, 204, 12, 0.1);
+}
+
+.btn-blue {
+	background-color: rgba(5, 255, 242, 0.1);
+}
+
+.btn-red {
+	background-color: rgba(168, 23, 23, 0.1);
+}
+
+.btn-yellow {
+	background-color: rgba(247, 226, 0, 0.1);
+}
+
+.btn-grey {
+	background-color: rgba(200,200,200,0.1);
+}

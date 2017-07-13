@@ -17,20 +17,20 @@ p {
 	padding: 5px;
 }
 
-button.filter-button {
+/*button.filter-button {
 	background:red;
 	padding:0;
 	border:none;
 	margin-top: -5px;
-}
+}*/
 
-.row {
+/*.row {
 	display: flex;
 }
 
 .col {
 	flex:1;
-}
+}*/1
 
 .blackbg {
 	background-color: black;

@@ -3,10 +3,23 @@
 	padding:0;
 }
 
+.tile .filter {
+	height:25%;
+}
+
 .tile-img {
 	height:100%;
 	width:100%;
 	object-fit:cover;
+}
+
+.tile-txt {
+	text-align: center;
+	height: 100%;
+	vertical-align: 50%;
+
+	color: white;
+
 }
 
 .tile-overlay {

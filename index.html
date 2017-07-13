@@ -1,131 +1,531 @@
 <!doctype html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<title>Rubber Ducky Network</title>
+
+		<!-- CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="styles/main.css">
-		<link rel="stylesheet" type="text/css" href="styles/background.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/tiles.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/slider.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/filter.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/button.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/background.css">
+		<!-- /CSS -->
+
 	</head>
 
+	
 	<body>
-		<header class="navbar-inverse">
-			<div class="container">
-				<nav class="navbar navbar-inverse" role="navigation">
-				    <!-- Brand and toggle get grouped for better mobile display -->
-				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-				      <a class="navbar-brand" href="index.html">Rubber Ducky Network</a>
-				    </div>
-
-				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				      <ul class="nav navbar-nav">
-				        <li><a href="games.html">Games <span class="sr-only">(current)</span></a></li>
-				        <li><a href="ksp.html">Mods</a></li>
-				        <li><a href="music.html">Music</a></li>
-				        <li class="dropdown">
-				          <a href="links.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Other Links <span class="caret"></span></a>
-				          <ul class="dropdown-menu" role="menu">
-				            <li><a href="https://www.youtube.com/channel/UCkl0d9uMnMZhsdAKf1e63JA">Youtube</a></li>
-				            <li class="divider"></li>
-				            <li><a href="http://steamcommunity.com/groups/RubberDuckyNetwork">Steam</a></li>
-				            <li class="divider"></li>
-				            <li><a href="about.html">About</a></li>
-				          </ul>
-				        </li>
-				      </ul>
-				    </div><!-- /.navbar-collapse -->
-				</nav>
-			</div>
-		</header>
-
-		<div class="container blackbg">
-			<div class="centered hidden-xs" id="slider">
+		<div class="container"> <!-- Nav -->
+			<div class="centered hidden-xs" id="slider"> <!-- Slider -->
 				<ul class="slides">
-					<li class="slide"><a href="games_SD2D.html"><img src="slider/slide1.png" alt="Featured Gaming"></a></li>
-					<li class="slide"><a href="https://www.youtube.com/watch?v=dzZgaR1IMGE&list=PLf6D5nY1vZ5_-EzHle2OVhLEVpSnZBJd1"><img src="slider/slide2.png" alt="Featured Music"></a></li>
-					<li class="slide"><a href="https://www.youtube.com/watch?v=3iAXb1AF4P4&list=UUkl0d9uMnMZhsdAKf1e63JA"><img src="slider/slide3.png" alt="It's on Mac"></a></li>
-					<li class="slide"><a href="https://www.youtube.com/watch?v=eICyvEDjTRI&list=PLf6D5nY1vZ5-Azeh9cy-jn2KEKgJiWsdy"><img src="slider/slide4.png" alt="Gaming"></a></li>
-					<li class="slide"><a href="https://www.youtube.com/watch?v=HvE2pgJr6t4&list=PLf6D5nY1vZ5_-EzHle2OVhLEVpSnZBJd1"><img src="slider/slide5.png" alt="Music Videos"></a></li>
-					<li class="slide"><a href="https://www.youtube.com/watch?v=mo7Cr9tOMvA&list=PLf6D5nY1vZ59Wq44i9Qbb546VzlAuHfy-"><img src="slider/slide5.png" alt="Just the Music"></a></li>
-					<li class="slide"><a href="https://www.youtube.com/watch?v=3iAXb1AF4P4&list=UUkl0d9uMnMZhsdAKf1e63JA"><img src="slider/slide1.png"><img src="slider/slide1.png" alt="Featured Gaming"></a></li>
+					<li class="slide">
+						<div class="content-icon" data-title="games_SD2D">
+							<img src="assets/img/slider/slide1.png" alt="Featured Gaming">
+						</div>
+					</li>
+					<li class="slide">
+						<a href="https://www.youtube.com/watch?v=dzZgaR1IMGE&list=PLf6D5nY1vZ5_-EzHle2OVhLEVpSnZBJd1">
+							<img src="assets/img/slider/slide2.png" alt="Featured Music">
+						</a>
+					</li>
+					<li class="slide">
+						<a href="https://www.youtube.com/watch?v=3iAXb1AF4P4&list=UUkl0d9uMnMZhsdAKf1e63JA">
+							<img src="assets/img/slider/slide3.png" alt="It's on Mac">
+						</a>
+					</li>
+					<li class="slide">
+						<a href="https://www.youtube.com/watch?v=eICyvEDjTRI&list=PLf6D5nY1vZ5-Azeh9cy-jn2KEKgJiWsdy">
+							<img src="assets/img/slider/slide4.png" alt="Gaming">
+						</a>
+					</li>
+					<li class="slide">
+						<a href="https://www.youtube.com/watch?v=HvE2pgJr6t4&list=PLf6D5nY1vZ5_-EzHle2OVhLEVpSnZBJd1">
+							<img src="assets/img/slider/slide5.png" alt="Music Videos">
+						</a>
+					</li>
+					<li class="slide">
+						<a href="https://www.youtube.com/watch?v=mo7Cr9tOMvA&list=PLf6D5nY1vZ59Wq44i9Qbb546VzlAuHfy-">
+							<img src="assets/img/slider/slide5.png" alt="Just the Music">
+						</a>
+					</li>
+					<li class="slide">
+						<a href="https://www.youtube.com/watch?v=3iAXb1AF4P4&list=UUkl0d9uMnMZhsdAKf1e63JA">
+							<img src="assets/img/slider/slide1.png" alt="Featured Gaming">
+						</a>
+					</li>
 				</ul>
-			</div>
-			<div class="row">
-				<div class="col-sm-6 col-md-3">
-					<div class="panel panel-default">
-						<div class="panel content">
-							<h3>Welcome to the Network</h3>
-							<p>
-								Website version 0.4 <br><br>
-								The main issue now, is getting the bootstrap layout work properly on every page.. and adding more content.
-							</p>
-							<p>
-								If you are here to DL some music, go to the music page.<br>
-								Kerbal Space Program files are in the Mods tab (my Payday 2 mods should be up here soon). <br> 
-								For my own games, head on over to the Games tab, currently got SD2D Endless DEMO up for free :D <br>
-							</p>
+			</div> <!-- /Slider -->
+
+			<div> <!-- content -->
+				<div class="content games_SD2D"> <!-- WD2D -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/games/SD2Dimg.png" alt="a cool picture is coming">
+						<div class="col-sm-12 col-lg-4 button btn-yellow">
+							<a href="https://www.dropbox.com/s/6xfycoc98wh1gnh/SD2DWinDEMO.zip?dl=1">Windows</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-grey">
+							<a href="https://www.dropbox.com/s/hmg8q6xkb6pjtou/SD2DOSXDEMO.zip?dl=1">macOS</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-blue">
+							<a href="https://www.dropbox.com/s/uxk96l94kmr3t8v/SD2DLnxDEMO.zip?dl=1">Linux</a>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-4 col-md-3">
-					<div class="thumbnail">
-				      <a href="games_SD2D.html"><img src="games/SD2Dimg.png" alt="a cool picture is coming"></a>
-				      <div class="caption">
-				        <h3>Space Drifters 2D</h3>
-				        <p>by Matthew (a.k.a Pepys)</p>
-				        <p><strong>Endless DEMO</strong><br>Version 1.0</p>
-				      </div>
-				    </div>
-				</div>
-				<div class="col-sm-4 col-md-3">
-					<div class="thumbnail">
-				      <a href="games_SDGGP.html"><img src="games/SDGGPimg.png" alt="a cool picture is coming"></a>
-				      <div class="caption">
-				        <h3>Space Drifters: Galactic Grand Prix</h3>
-				        <p>by Anthony & Matthew</p>
-				      </div>
-				    </div>
-				</div>
-				<div class="col-sm-4 col-md-3">
-					<div class="thumbnail panelheight45">
-				      <img src="albumcovers/hisai.png" alt="a cool picture is coming">
-				      <div class="caption">
-				        <h3>How I Stay Alive Inside</h3>
-				        <p>Matthew<br>2014-2015</p>
-				        <p><a href="https://www.dropbox.com/s/p78hfsvp5r81uug/How%20I%20Stay%20Alive%20Inside.zip?dl=1" class="btn btn-primary" role="button">Download</a> <a href="https://rubberducky.bandcamp.com/album/how-i-stay-alive-inside" class="btn btn-success" role="button">Buy</a></p>
-				      </div>
-				    </div>
-				</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>SpaceDrifters 2D</h3>
+							<p>
+								A top down space shooter with Newtonian physics style movement. <br>
+								Made in the Unity engine with graphics and controls reminiscent of Asteroids with the added benefit of a local co-op and versus mode.
+							</p>
+							<p>
+								Already playable but currently not finished, single player mode is endless and pits you againts one enemy type for now of which there are more and more as time goes by. Multiplayer gives you more options for local, shared screen gameplay: Co-Op Endless, 1v1 Versus, Hold the Flag, King of the Hill and Race.
+							</p>
+							<p>
+								<a href="http://store.steampowered.com/app/377570">Get Space Drifters 2D on Steam</a> <br>
+								<a href="http://pepys.itch.io/space-drifters-2d">Get Space Drifters 2D on Itch.io</a> <br>
+								<a href="games_SD2D_HowTo.html">How to / Instructions</a>
+							</p>
+							
+							<iframe class="hidden-xs hidden-sm hidden-md" src="http://store.steampowered.com/widget/377570/" frameborder="0" width="646" height="190"></iframe>
+							<iframe class="hidden-xs hidden-sm hidden-md" src="//itch.io/embed/26936?dark=true"width="552" height="167" frameborder="0"></iframe>
+					</div>
+					<hr>
+				</div><!-- /WD2D -->
 
-			</div>
-		</div>
+				<div class="content games_SDGGP"> <!-- SDGGP -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/games/SDGGPimg.png" alt="a cool picture is coming">
+						<div class="col-sm-12 col-lg-4 button btn-yellow">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPwinB.zip?dl=1">Windows</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-red">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPwinD.zip?dl=1">WindowsDev</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-blue">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPlnxB.zip?dl=1">Linux</a>
+						</div>
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>Space Drifters : Galactic Grand Prix</h3>
+							<p>
+								A physics based top down space racer made in Unity, with a retro feel in it's pixel art and chiptune music. <br>
+								<a href="games_SD2D_HowTo.html">How to / Instructions</a> <br>
+								<a href="http://steamcommunity.com/app/377570/discussions/2/">Steam Forums</a>
+							</p>
+					</div>
+					<hr>
+				</div><!-- /SDGGP -->
 
-		<div class="row"></div>
-		
-		<script src="javascript/jquery/jquery.js"/></script>
+				<div class="content games_SvM2D"> <!-- SvM2D -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/games/SvM2Dimg.png" alt="a cool picture is coming">
+						<!--<div class="col-sm-12 col-lg-4 button btn-yellow">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPwinB.zip?dl=1">Windows</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-red">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPwinD.zip?dl=1">WindowsDev</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-blue">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPlnxB.zip?dl=1">Linux</a>
+						</div>-->
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>Spitfire vs Messerschmitt 2D</h3>
+							<p>
+								information coming soon.
+							</p>
+					</div>
+					<hr>
+				</div><!-- /SvM2D -->
+
+				<div class="content games_PIXIE"> <!-- Pixie -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="http://illstudios.16mb.com/gallery_gen/0977428de012a566fb0af74e1a9a4b42_480x240.jpg" alt="a cool picture is coming">
+						<!--<div class="col-sm-12 col-lg-4 button btn-yellow">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPwinB.zip?dl=1">Windows</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-red">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPwinD.zip?dl=1">WindowsDev</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-blue">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPlnxB.zip?dl=1">Linux</a>
+						</div>-->
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>Pixie</h3>
+							<p>IllStudios first release on Google Play, PIXIE is a top-down space shooter designed using pixel art and chip-tune music. Blast your way through tons of enemys in this endless shooter. Featuring a 10 level 	progressive diffiulty system, 15 enemys, random firing patterns and enemy spawning.
+								Now avalible on Google Play, click the link below to download.
+								<br><br>
+								IllStudio's first release for Android on the Google Play Store, currently in BETA, and open to the first 1000 testers. <br>
+								<a href="https://play.google.com/store/apps/details?id=com.RubberDuckyNetwork.PIXIE">Get on Google Play</a>
+							</p>
+					</div>
+					<hr>
+				</div><!-- /Pixie -->
+
+				<div class="content games_Heister"> <!-- Heister -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/defaults/default_games.png" alt="a cool picture is coming">
+						<!--<div class="col-sm-12 col-lg-4 button btn-yellow">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPwinB.zip?dl=1">Windows</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-red">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPwinD.zip?dl=1">WindowsDev</a>
+						</div>
+						<div class="col-sm-12 col-lg-4 button btn-blue">
+							<a href="https://www.dropbox.com/s/tdhw0qipei6qfm0/SDGGPlnxB.zip?dl=1">Linux</a>
+						</div>-->
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>Heisters</h3>
+							<p>
+								information coming soon
+							</p>
+					</div>
+					<hr>
+				</div><!-- /Heister -->
+
+				<div class="content music_hisai"> <!-- HISAI -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/music/hisai.png" alt="a cool picture is coming">
+						<div class="col-sm-12 col-lg-6 button btn-blue">
+							<a href="https://www.dropbox.com/s/p78hfsvp5r81uug/How%20I%20Stay%20Alive%20Inside.zip?dl=1">Download</a>
+						</div>
+						<div class="col-sm-12 col-lg-6 button btn-green">
+							<a href="https://rubberducky.bandcamp.com/album/how-i-stay-alive-inside">Buy</a>
+						</div>
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>How I Stay Alive Inside</h3>
+						<p>
+							By Matthew 
+							<br>
+							<br>
+							Compilation created during the Stay Alive bundle as a extended goal prize.
+							<br>
+							<br>
+							Track List:
+							<ul>
+								<li>Last Pilot in the Universe</li>
+								<li>MvAM</li>
+								<li>Try Again</li>
+								<li>Single Song To Orbit</li>
+								<li>Last Pilot in the Universe (Piano)</li>
+								<li>Myvcraft</li>
+								<li>Time To Run</li>
+								<li>Waves</li>
+							</ul>
+						</p>
+					</div>
+					<hr>
+				</div><!-- /HISAI -->
+
+				<div class="content music_SD2DOST"> <!-- SD2DOST -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/music/sd2dost.png" alt="a cool picture is coming">
+						<div class="col-sm-12 col-lg-12 button btn-blue">
+							<a href="https://www.dropbox.com/s/h9hnl8o7ci70wq0/Space%20Drifters%202D%20OST.zip?dl=1">Download</a>
+						</div>
+						<!--<div class="col-sm-12 col-lg-6 button btn-green">
+							<a href="https://rubberducky.bandcamp.com/album/how-i-stay-alive-inside">Buy</a>
+						</div>-->
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>SD2D OST</h3>
+						<p>
+							By Matthew 
+							<br>
+							<br>
+							Original Sound Track for SD2D.
+							<br>
+							<br>
+							<!--Track List:
+							<ul>
+								<li>Last Pilot in the Universe</li>
+								<li>MvAM</li>
+								<li>Try Again</li>
+								<li>Single Song To Orbit</li>
+								<li>Last Pilot in the Universe (Piano)</li>
+								<li>Myvcraft</li>
+								<li>Time To Run</li>
+								<li>Waves</li>
+							</ul>-->
+						</p>
+					</div>
+					<hr>
+				</div><!-- /SD2DOST -->
+
+				<div class="content music_BerthaJane"> <!-- BerthaandJane -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/music/berthaandjane.png" alt="a cool picture is coming">
+						<div class="col-sm-12 col-lg-12 button btn-blue">
+							<a href="https://www.dropbox.com/s/qxkaufbivksc873/Bertha%20%26%20Jane%20%28Single%29.zip?dl=1">Download</a>
+						</div>
+						<!--<div class="col-sm-12 col-lg-6 button btn-green">
+							<a href="https://rubberducky.bandcamp.com/album/how-i-stay-alive-inside">Buy</a>
+						</div>-->
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>How I Stay Alive Inside</h3>
+						<p>
+							Song By Helena Rigby
+							<br>
+							<br>
+							Track List:
+							<ul>
+								<li>Bertha & Jane</li>
+							</ul>
+						</p>
+					</div>
+					<hr>
+				</div><!-- /BerthaandJane -->
+
+				<div class="content music_EpicSortOf"> <!-- sortofepic -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/music/epicsortof.png" alt="a cool picture is coming">
+						<div class="col-sm-12 col-lg-6 button btn-blue">
+							<a href="https://www.dropbox.com/s/wxrwdjemkvhxove/That%27s%20EPic...%20%28Sort%20of%29.zip?dl=1">Download</a>
+						</div>
+						<div class="col-sm-12 col-lg-6 button btn-green">
+							<a href="https://rubberducky.bandcamp.com/album/thats-epic-sort-of">Buy</a>
+						</div>
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>That's Epic...</h3>
+						<p>
+							By (Sort Of)
+							<br>
+							<br>
+							Track List:
+							<ul>
+								<li>Intro</li>
+								<li>Find Myself</li>
+								<li>Unseen</li>
+								<li>Forsaken and Forgotten</li>
+								<li>Kicked Down</li>
+								<li>Jasper Eaton - Let Me</li>
+							</ul>
+						</p>
+					</div>
+					<hr>
+				</div><!-- /sortofepic -->
+
+				<div class="content music_TriangleRough"> <!-- triangle -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/music/trainglroughversion.png" alt="a cool picture is coming">
+						<div class="col-sm-12 col-lg-6 button btn-blue">
+							<a href="https://www.dropbox.com/s/t73g54ev7mmfrdi/Triangle%20DEMO.zip?dl=1">Download</a>
+						</div>
+						<div class="col-sm-12 col-lg-6 button btn-green">
+							<a href="https://rubberducky.bandcamp.com/album/ep-triangl-theta">Buy</a>
+						</div>
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>Triangl-theta</h3>
+						<p>
+							By Matthew
+							<br>
+							<br>
+							Track List:
+							<ul>
+								<li>Wandering (Wandering Mind & Space)</li>
+								<li>MITM-CAfG</li>
+								<li>Everybody Does It</li>
+							</ul>
+						</p>
+					</div>
+					<hr>
+				</div><!-- /triangle -->
+
+				<div class="content mods_EDCalc"> <!-- EDCalc -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/mods/EDCalc.png" alt="a cool picture is coming">
+						<div class="col-sm-12 col-lg-12 button btn-blue">
+							<a href="calculators/FsdModCalculator.html">Go To</a>
+						</div>
+						<!--<div class="col-sm-12 col-lg-6 button btn-green">
+							<a href="https://rubberducky.bandcamp.com/album/how-i-stay-alive-inside">Buy</a>
+						</div>-->
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>FSD Mod Calculation and Comparison Tool</h3>
+						<p>
+							As the title says, this is the FSD Mod Calculator. The ultimate tool for anyone who's upgrading their FSD with an engineer. It features state of the art text input fields, the most beautiful black background ever seen on the Internet, the option to store values, and a standard font. Never has the Internet been so enjoyable. <br>
+							Simply enter the current stats of your craft (you can look them up in outfitting), then go to see what the Engineer has to offer, and punch their numbers in to the Mod fields.
+						</p>
+					</div>
+					<hr>
+				</div><!-- /EDCalc -->
+
+				<div class="content mods_OrganicWaste"> <!-- BioWaste -->
+					<div class="col-sm-3 col-lg-4">
+						<img class="tile-img" src="assets/img/coverart/mods/organicwaste.png" alt="a cool picture is coming">
+						<div class="col-sm-12 col-lg-12 button btn-blue">
+							<a href="https://www.dropbox.com/s/wdywy0qof5b8j4a/Organic%20WasteContainer.zip?dl=1">Download</a>
+						</div>
+						<!--<div class="col-sm-12 col-lg-6 button btn-green">
+							<a href="https://rubberducky.bandcamp.com/album/how-i-stay-alive-inside">Buy</a>
+						</div>-->
+					</div>
+					<div class="col-sm-9 col-lg-8">
+						<h3>KSP Tac Life Support Piece</h3>
+						<p>
+							Basically.... a bin. (last verified on an old version of KSP)
+						</p>
+					</div>
+					<hr>
+				</div><!-- /BioWaste -->
+			</div> <!-- /content -->
+			
+			<div id="tiles"> <!-- Tiles -->
+				<div class="col-sm-4 col-md-3 col-lg-2 filters">
+					<div class="filter linkalink" data-filter="games" data-hover="tooltip" data-placement="left" title="Games">
+						<img src="assets/img/minipix/GAME.png" alt="">
+					</div>
+					<div class="filter linkalink" data-filter="music" data-hover="tooltip" data-placement="left" title="Music">
+						<img src="assets/img/minipix/MUSIC.png" alt="">
+					</div>
+					<div class="filter linkalink" data-filter="mod" data-hover="tooltip" data-placement="left" title="Mods and Tools">
+						<img src="assets/img/minipix/MOD.png" alt="">
+					</div>
+					<div class="filter linkalink" data-filter="video" data-hover="tooltip" data-placement="left" title="Videos">
+						<img src="assets/img/minipix/VIDEO.png" alt="">
+					</div>
+					<div class="filter linkalink" data-filter="featured" data-hover="tooltip" data-placement="left" title="Featured">
+						<img src="assets/img/minipix/TOP.png" alt="">
+					</div>
+					<div class="filter linkalink" data-filter="hidable" data-hover="tooltip" data-placement="left" title="ALL">
+						<img src="assets/img/minipix/ALL.png" alt="">
+					</div>
+					<p>
+						<h1>RDN</h1>
+						Welcome to v0.9 of RDN. Use the buttons above to filter content (hover for info).
+					</p>
+				</div>			
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon games featured" data-title="games_SD2D">
+						<img class="tile-img" src="assets/img/coverart/games/SD2Dimg.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<a href="http://store.steampowered.com/app/377570/" data-hover="tooltip" data-placement="left" title="View on Steam"><img src="assets/img/minipix/STEAM.png" alt=""></a>
+							<img src="assets/img/minipix/GAME.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon music featured" data-title="music_hisai">
+						<img class="tile-img" src="assets/img/coverart/music/hisai.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/MUSIC.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon games featured" data-title="games_SvM2D">
+						<img class="tile-img" src="assets/img/coverart/games/SvM2Dimg.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/GAME.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable">
+					<a href="about.html">
+						<img class="tile-img" src="assets/img/txtTiles/about.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+					</a>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon games featured" data-title="games_PIXIE">
+						<img class="tile-img" src="assets/img/coverart/games/PIXIEimg.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/GAME.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon mod featured" data-title="mods_EDCalc">
+						<img class="tile-img" src="assets/img/coverart/mods/EDCalc.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/MOD.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon games featured" data-title="games_Heister">
+						<img class="tile-img" src="assets/img/defaults/default_games.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/GAME.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon music" data-title="music_SD2DOST">
+						<img class="tile-img" src="assets/img/coverart/music/sd2dost.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/MUSIC.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon games" data-title="games_SDGGP">
+						<img class="tile-img" src="assets/img/coverart/games/SDGGPimg.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/GAME.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon music" data-title="music_BerthaJane">
+						<img class="tile-img" src="assets/img/coverart/music/berthaandjane.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/MUSIC.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon music" data-title="music_TriangleRough">
+						<img class="tile-img" src="assets/img/coverart/music/trainglroughversion.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/MUSIC.png" alt="">
+						</div>
+				</div>				
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon mod" data-title="mods_OrganicWaste">
+						<img class="tile-img" src="assets/img/coverart/mods/organicwaste.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/MOD.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable content-icon music" data-title="music_EpicSortOf">
+						<img class="tile-img" src="assets/img/coverart/music/epicsortof.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+						<div class="tile-overlay-content">
+							<img src="assets/img/minipix/MUSIC.png" alt="">
+						</div>
+				</div>
+				<div class="col-sm-4 col-md-3 col-lg-2 col tile hidable">
+					<a href="links.html">
+						<img class="tile-img" src="assets/img/txtTiles/links.png" alt="a cool picture is coming">
+						<div class="tile-overlay"></div>
+					</a>
+				</div>
+			</div> <!-- /Tiles -->
+			<div height="100px"></div>
+		</div> <!-- /Nav -->
+
+		<div class="container"> <!-- Content -->
+			
+
+
+		</div> <!-- /Content -->
+
+		<!-- Javascript -->
+		<script src="assets/javascript/jquery.js"/></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		<script src="javascript/main/slider.js"></script>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script src="assets/javascript/slider.js"></script>
+		<script src="assets/javascript/filter.js"></script>
+		<script src="assets/javascript/contentdisplay.js"></script>
+		<script src="assets/javascript/tooltips.js"></script>
+		<!--<script src="assets/javascript/stickysidebar.js"></script>-->
+		<!--<script src="assets/javascript/analytics.js"></script>-->
+		<!-- /Javascript -->
 
-		  ga('create', 'UA-38740348-2', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
 	</body>
 </html>

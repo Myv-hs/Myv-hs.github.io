@@ -3,7 +3,10 @@
 	padding-top:10px;
 	padding-bottom: 10px;
 	opacity: 0.8;
-	margin-bottom: 10%;
+}
+
+.button-container {
+	margin:10%;
 }
 
 .button a {

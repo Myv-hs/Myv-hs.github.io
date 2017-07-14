@@ -3,6 +3,7 @@ $('.content').hide();
 
 var urlSelector = window.location.hash;
 var urlSelector = urlSelector.split("#")[1];
+console.log(window.location.href);
 console.log(urlSelector);
 if (urlSelector) {
 	$('.'+urlSelector).slideDown(1000, function() {

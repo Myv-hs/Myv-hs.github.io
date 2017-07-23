@@ -2,8 +2,8 @@
 $('.content').hide(0, function(){
 	var urlSelector = window.location.hash;
 	urlSelector = urlSelector.split("#")[1];
-	console.log(window.location.href);
-	console.log(urlSelector);
+	console.log("contentdisplay.js :: "+window.location.href);
+	console.log("contentdisplay.js :: "+urlSelector);
 	if (urlSelector) {
 		$('.'+urlSelector).slideDown(1000, function() {
 			$('html, body').animate({scrollTop: 400}, 200);

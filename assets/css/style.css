@@ -42,3 +42,13 @@ hr {
 .loadl8tr {
 	display:none;
 }
+
+.center {
+	margin: auto;
+	text-align: center;
+}
+
+.txt-margin {
+	margin-left: 5%;
+	margin-right: 5%;
+}

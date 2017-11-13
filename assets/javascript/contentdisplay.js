@@ -11,7 +11,7 @@ $('.content').hide(0, function(){
 	}
 });
 
-$(function() {
+//$(function() {
 	$('.content-icon').on('click', function() {
 		var chosencontent = $(this).attr('data-title');
 		if (!$('.'+chosencontent).is(":visible")) {
@@ -26,4 +26,4 @@ $(function() {
 			});
 		}
 	});
-});
+//});

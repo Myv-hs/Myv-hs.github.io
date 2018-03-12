@@ -1,4 +1,10 @@
+#tiles {
+	display: grid;
+	grid-template-columns: repeat(8,1fr);
+}
+
 .tile {
+	position: relative;
 	margin:0;
 	padding:0;
 }
@@ -25,15 +31,16 @@
 .tile-overlay {
 	position: absolute;
 	top: 0;
+	right:0;
 	bottom: 0;
 	left: 0;
-	right: 0;
 	height: 100%;
 	width: 100%;
 	opacity: 0.5;
 	transition: .5s ease;
 	background-color: black;
 }
+
 .tile-overlay-content {
 	position: absolute;
 	/*width: 10%;

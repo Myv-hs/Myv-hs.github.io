@@ -19,7 +19,7 @@
 	grid-row: span 2;
 }
 
-#tiles_4by3 {
+.tiles_4by3 {
 	display: grid;
 	grid-template-rows: repeat(3, 1fr);
 	grid-template-columns: repeat(4,1fr);

@@ -3,26 +3,31 @@
 	grid-template-columns: repeat(auto-fill,minmax(125px, 1fr));
 }
 
-.tile_2by2 {
+.tile_2x {
 	grid-column: span 2;
 	grid-row: span 2;
 }
 
-.tiles_3by3 {
-	display: grid;
-	grid-template-rows: repeat(3, 1fr);
-	grid-template-columns: repeat(3,1fr);
-}
-
-.tile_3by2 {
+.tile_3x {
 	grid-column: span 3;
-	grid-row: span 2;
+	grid-row: span 3;	
 }
 
-.tiles_4by3 {
+.tile_4x {
+	grid-column: span 4;
+	grid-row: span 4;
+}
+
+.tiles_6x {
 	display: grid;
-	grid-template-rows: repeat(3, 1fr);
-	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(6, 1fr);
+	grid-template-columns: repeat(6,1fr);
+}
+
+.tiles_12x {
+	display: grid;
+	grid-template-rows: repeat(12, 1fr);
+	grid-template-columns: repeat(12,1fr);
 }
 
 .tile {
